@@ -24,3 +24,14 @@ else
 	exit 1
 fi
 exit
+
+
+
+#!/bin/bash
+read -p "enter file name: " source
+file=$(find / -type f -name "$source" 2> /dev/null | head -n1)
+if [[ -f "$file" ]]; then 
+    echo "the file exists."
+else
+    echo "the file does not exist."
+fi
