@@ -33,3 +33,15 @@ ps auxf --width=200
 echo "--------------------"
 echo "vmstat:"
 vmstat 1 5
+
+
+#In the following example files older than two weeks in the temp folder are found and then
+piped to the xargs command which runs the rm command on each file and removes them
+find /tmp -mtime +14 | xargs rm
+
+
+#The -t option prints each command that will be executed to the terminal. This can be helpful when debugging scripts.
+
+echo 'one two three' | xargs -t rm
+rm one two three
+
